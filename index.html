@@ -1,0 +1,104 @@
+<html prefix="og: http://ogp.me/ns#">
+	<head>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<script src="js/BitmapEditor.js"></script>
+		
+		<!-- <link rel="preload" href="css/BitmapEditor.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
+		<!-- <noscript><link rel="stylesheet" href="css/BitmapEditor.css"></noscript> -->
+		<link rel="stylesheet" href="css/BitmapEditor.css">
+		<!-- <link rel="preload" href="css/emoji.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
+		<!-- <noscript><link rel="stylesheet" href="css/emoji.css"></noscript> -->
+		<link rel="stylesheet" href="css/emoji.css">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Morpholohy Calculator</title>
+		<link rel="canonical" href="https://arieljannai.gitlab.io/Nand2TetrisBitmapEditor/" />
+		<meta property="og:title" content="Bitmap Editor for the Nand2Tetris course" />
+		<meta property="og:url" content="https://arieljannai.gitlab.io/Nand2TetrisBitmapEditor/" />
+		<meta property="og:image" content="https://arieljannai.gitlab.io/Nand2TetrisBitmapEditor/img/icon.png" />
+		<meta property="og:image:alt" content="The Bitmap Editor icon" />
+		<meta property="og:description" content="Generates highly optimized jack code for drawing a 16x16 bitmap to the screen." />
+		<meta name="description" content="Generates highly optimized jack code for drawing a 16x16 bitmap to the screen." />
+		<meta http-equiv="Cache-control" content="max-age=2628000">
+	</head>
+	<body>
+		<header>
+			<span id="title">Morphology Calculator</span><span>Calculates morphlogy</span>
+			
+		</header>
+		<div id="container">
+			<div id="bitmap-area" class="table-cell">
+				<div id="bitmap-table">
+				</div>
+				<div>
+					<fieldset class="bitmap-table-actions">
+						<legend class="bitmap-table-actions-title">Bitmap table actions</legend>
+						<div class="shift-buttons">
+							<input type="button" class="em ar-d-up" onclick="ShiftUp()"/>
+							<div>
+								<input type="button" class="ar-d-left" onclick="ShiftLeft()"/>
+								<label class="shift-label">Shift</label>
+								<input type="button" class="ar-d-right" onclick="ShiftRight()"/>
+							</div>
+							<input type="button" class="ar-d-down" onclick="ShiftDown()"/>
+						</div>
+						<div class="bitmap-actions-buttons">
+							<ul class="bitmap-actions-buttons-list">
+								<li><input class="bitmap-action-button" type="button" value="Rotate &#8635;" onclick="RotateBitmapRight()"/></li>
+								<li><input class="bitmap-action-button" type="button" value="Vertical Mirror &harr;" onclick="MirrorBitmap()"/></li>
+								<li><input class="bitmap-action-button" type="button" value="Negative" onclick="NegativeBitmap()"/></li>
+							</ul>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+			<div id="output-area" class="table-cell">
+				<fieldset>
+					<legend>Mask</legend>
+                    <div>
+                <div id="mask-table">
+                </div>
+                        <fieldset class="mask-table-actions">
+                            <legend class="mask-table-actions-title">Morphology actions</legend>
+                            <div class="mask-actions-buttons">
+                                <ul class="mask-actions-buttons-list">
+                                    <li><input class="mask-action-button" type="button" value="Erosion" onclick="RotateBitmapRight()"/></li>
+                                    <li><input class="mask-action-button" type="button" value="Dialation" onclick="MirrorBitmap()"/></li>
+                                    <li><input class="mask-action-button" type="button" value="Opening" onclick="NegativeBitmap()"/></li>
+                                    <li><input class="mask-action-button" type="button" value="Closing" onclick="NegativeBitmap()"/></li>
+                                </ul>
+                            </div>
+                        </fieldset>
+                    </div>
+					<!-- <fieldset class="output-options">
+						<legend>Output options</legend>
+						<div class="output-options-fields">
+							<div class="output-option-field">
+								<label>Function Type:</label>
+								<select id="functionType" onChange="GenerateBitMap()">
+									<option value="function" selected="selected">function</option>
+									<option value="method">method</option>                                    
+								</select>
+							</div>
+							<div class="output-option-field">
+								<label>Function Name:</label>
+								<input type="text" value="draw" id="functionName" onkeyup="GenerateBitMap()"/>
+							</div>
+						</div>
+						<div class="output-buttons">
+							<input type="button" value="Generate Code >>" onclick="GenerateBitMap()"/>
+							<input type="button" value="Copy Code 📋" onclick="copyCode()"/>
+							<BR>
+							<input type="checkbox" id="extraTab" checked="true">
+							<label for="extraTab">Add extra tab before copy</label>
+						</div>
+                    </fieldset> 
+					<textarea id="generatedCode" cols="50" rows="20" readonly="read-only" wrap="off"></textarea>
+                </fieldset> -->
+			</div>
+		</div>
+		<footer>
+            <span>Adapted from <a href="https://github.com/arieljannai">Ariel Jannai</a>'s <a href="https://arieljannai.gitlab.io/Nand2TetrisBitmapEditor/">Bitmap Editor</a>
+			</span>
+		</footer>
+	</body>	
+</html>

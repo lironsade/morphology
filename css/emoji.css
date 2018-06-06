@@ -1,0 +1,16 @@
+.ar-d-down, .ar-d-left, .ar-d-right, .ar-d-up, .ar-down-red {
+	display: inline-block;
+	background: url('../img/sprite.png') no-repeat;
+	overflow: hidden;
+	text-indent: -9999px;
+	text-align: left;
+	zoom: 0.29;
+	-moz-transform: scale(0.29);
+	vertical-align: middle;
+}
+ 
+.ar-d-down { background-position: -0px -0px; width: 72px; height: 72px; -moz-transform-origin: 50% -45%; }
+.ar-d-left { background-position: -72px -0px; width: 72px; height: 72px; -moz-transform-origin: 100% 50%; }
+.ar-d-right { background-position: -0px -72px; width: 72px; height: 72px; -moz-transform-origin: 0; }
+.ar-d-up { background-position: -72px -72px; width: 72px; height: 72px; -moz-transform-origin: 50% 140%; }
+.ar-down-red { background-position: -0px -144px; width: 72px; height: 72px; zoom: 0.33; -moz-transform-origin: 0; }

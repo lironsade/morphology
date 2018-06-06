@@ -1,0 +1,237 @@
+html { 
+   width:100%; 
+   height:100%; 
+   /*background:url(logo.png) center center no-repeat;*/
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+header {
+	position: absolute;
+	right: 0;
+	top: 0;
+	left: 0;
+	width: auto;
+	text-align: center;
+	padding: 1rem;
+	background-color: #bccdff;
+}
+
+.features-area {
+	text-align: center;
+	width: 35%;
+	margin: 0 auto;
+	text-align: left;
+}
+
+#title {
+	font-size: xx-large;
+	font-weight: bold;
+	margin-right: 2%;
+}
+
+#bitmap-table {
+	display: grid;
+	grid: repeat(17, 21px) / auto-flow 21px;
+	background-color: #333399;
+	width: 357px;
+	padding: 1px 0 0 1px;
+}
+
+.bitmap-border-cell {
+	background-color: #b0cdf0;
+	/*background-color: #efefef;*/
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.bitmap-row {
+}
+
+.bitmap-cell {
+	width: 20px;
+	height: 20px;
+}
+
+#container {
+	margin-top: 170px;
+	display: flex;
+	justify-content: center;
+}
+
+#bitmap-area {
+	padding-right: 20px;
+}
+
+.table-cell {
+	display: table-cell;
+}
+
+.output-options-fields {
+	display: table;
+}
+
+.output-option-field {
+	display: table-row;
+}
+
+.output-option-field > * {
+	display: table-cell;
+	margin: 0 5px;
+}
+
+.output-options > div {
+	margin: 0 15%;
+}
+
+.output-option-field > label + * {
+	width: 123px;
+}
+
+.rotate {
+	transform: rotate(90deg);
+}
+
+.bitmap-table-actions {
+	width: 328px;
+	height: 100px;
+	text-align: center;
+	position: relative;
+}
+
+.shift-buttons {
+	position: absolute;
+	top: 50%;
+	left: 20%;
+	transform: translate(-50%, -50%);
+}
+
+.bitmap-actions-buttons {
+	position: absolute;
+	top: 50%;
+	right: 0%;
+	transform: translate(-50%, -50%);
+}
+
+.bitmap-actions-buttons-list {
+	list-style: none;
+	margin: 0%;
+	padding: 0%;
+}
+
+.bitmap-action-button {
+	width: 100%;
+	margin: 1px 0;
+} 
+
+.bitmap-table-actions-title {
+	text-align: left;
+}
+
+.features {
+	cursor: hand;
+}
+
+.hidden {
+	display: none;
+}
+
+footer {
+	text-align: center;
+	padding: 1rem;
+	margin-top: auto;
+	background-color: #efefef;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.gitlab-tiny-icon {
+	width: 1em;
+	height: 1em;
+}
+
+#generatedCode {
+	margin-top: 5px;
+}
+
+
+/* mask */
+
+.mask-table-actions {
+	width: 100px;
+	height: 120px;
+	text-align: center;
+	position: relative;
+}
+
+.shift-buttons {
+	position: absolute;
+	top: 50%;
+	left: 20%;
+	transform: translate(-50%, -50%);
+}
+
+.mask-actions-buttons {
+	position: absolute;
+	top: 62%;
+	right: 0%;
+	transform: translate(-50%, -50%);
+}
+
+.mask-actions-buttons-list {
+	list-style: none;
+	margin: 0%;
+	padding: 0%;
+}
+
+.mask-action-button {
+	width: 100%;
+	margin: 1px 0;
+} 
+
+.mask-table-actions-title {
+	text-align: left;
+}
+
+#mask-table {
+	display: grid;
+	grid: repeat(6, 21px) / auto-flow 21px;
+	background-color: #333399;
+	width: 126px;
+	padding: 1px 0 0 1px;
+}
+
+.mask-border-cell {
+	background-color: #b0cdf0;
+	/*background-color: #efefef;*/
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.mask-cell {
+	width: 20px;
+	height: 20px;
+}
