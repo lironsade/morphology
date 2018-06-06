@@ -145,14 +145,25 @@ function copyCode() {
 
 function OnCellHover(e) {
 	var cell = e.target || e.srcElement;
+    var _grid;
+    if (e.target.classList.contains('bitmap-cell'))
+    {
+        _grid = grid;
+        _size = 16;
+    }
+    else
+    {
+        _grid = mask;
+        _size = 5;
+    }
 	if (mouseDown !== 0) {
-		var i = cell.id / 16 | 0;
-		var j = cell.id - i * 16;
+		var i = cell.id / _size | 0;
+		var j = cell.id - i * _size;
 		if (mouseDown === 1) {
-			grid[i][j] = true;
+			_grid[i][j] = true;
 			cell.style.backgroundColor = "black";
 		} else if (mouseDown === -1) {
-			grid[i][j] = false;
+			_grid[i][j] = false;
 			cell.style.backgroundColor = "white";
 		}
 	}
@@ -161,10 +172,22 @@ function OnCellHover(e) {
 
 function OnCellClicked(e) {
 	var cell = e.target || e.srcElement;
-	var i = cell.id / 16 | 0;
-	var j = cell.id - i * 16;
-	grid[i][j] = !grid[i][j];
-	if (grid[i][j]) {
+    var _grid;
+    if (e.target.classList.contains('bitmap-cell'))
+    {
+        _grid = grid;
+        _size = 16;
+    }
+    else
+    {
+        _grid = mask;
+        _size = 5;
+    }
+	var i = cell.id / _size | 0;
+	var j = cell.id - i * _size;
+
+	_grid[i][j] = !_grid[i][j];
+	if (_grid[i][j]) {
 		cell.style.backgroundColor = "black";
 	} else {
 		cell.style.backgroundColor = "white";
