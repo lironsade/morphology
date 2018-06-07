@@ -69,6 +69,11 @@ function MirrorBitmap() {
 	DisplayGrid();
 }
 
+function ClearBitmap() {
+	grid = InitGrid();
+	DisplayGrid();
+}
+
 function DisplayGrid() {
 	var container = document.getElementById("bitmap-table");
 	var cContainer = container.cloneNode(false);
@@ -386,7 +391,7 @@ function Dialation() {
 		for (j=0; j<16; j++) {
             if (grid[i][j]) {
                 for(k=0; k<5; k++) {
-                    if ((i + 2 - k) < 0 || (i + 2 - k) > 15) {
+                    if ((i - 2 + k) < 0 || (i - 2 + k) > 15) {
                         continue;
                     }
                     for(l=0; l<5; l++) {
@@ -410,7 +415,7 @@ function Erosion() {
             if (grid[i][j]) {
                 _grid[i][j] = true
                 for(k=0; k<5; k++) {
-                    if ((i + 2 - k) < 0 || (i + 2 - k) > 15) {
+                    if ((i - 2 + k) < 0 || (i - 2 + k) > 15) {
                         continue;
                     }
                     for(l=0; l<5; l++) {
@@ -430,11 +435,11 @@ function Erosion() {
 }
 
 function Opening() {
-    Dialation()
     Erosion()
+    Dialation()
 }
 
 function Closing() {
-    Erosion()
     Dialation()
+    Erosion()
 }
