@@ -379,3 +379,62 @@ function DisplayMask() {
 	container.onpointercancel = function() { mouseDown = 0; }
 
 };
+
+function Dialation() {
+	var _grid = InitGrid();
+	for (i=0; i<16; i++) {
+		for (j=0; j<16; j++) {
+            if (grid[i][j]) {
+                for(k=0; k<5; k++) {
+                    if ((i + 2 - k) < 0 || (i + 2 - k) > 15) {
+                        continue;
+                    }
+                    for(l=0; l<5; l++) {
+                        if ((j - 2 + l) < 0 || (j - 2 + l) > 15) {
+                            continue;
+                        }
+                        _grid[i - 2 + k][j - 2 + l] = _grid[i - 2 + k][j - 2 + l] || mask[k][l];
+                    }
+                }
+            }
+		}
+	}
+	grid = _grid;
+	DisplayGrid();
+}
+
+function Erosion() {
+	var _grid = InitGrid();
+	for (i=0; i<16; i++) {
+		for (j=0; j<16; j++) {
+            if (grid[i][j]) {
+                _grid[i][j] = true
+                for(k=0; k<5; k++) {
+                    if ((i + 2 - k) < 0 || (i + 2 - k) > 15) {
+                        continue;
+                    }
+                    for(l=0; l<5; l++) {
+                        if ((j - 2 + l) < 0 || (j - 2 + l) > 15) {
+                            continue;
+                        }
+                        if (mask[k][l]) {
+                            _grid[i][j] = _grid[i][j] && grid[i - 2 + k][j - 2 + l];
+                        }
+                    }
+                }
+            }
+		}
+	}
+	grid = _grid;
+	DisplayGrid();
+}
+
+function Opening() {
+    Dialation()
+    Erosion()
+}
+
+function Closing() {
+    Erosion()
+    Dialation()
+}
